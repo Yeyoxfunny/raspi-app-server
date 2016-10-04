@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>RaspiApp</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+<body>
+
+	<nav class="indigo">
+		<div class="nav-wrapper">
+		  <a href="/app" class="brand-logo">SIGESTECCI</a>
+		  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+		  	<li>
+				<a href="/app/admin"><i class="material-icons right">account_circle</i>Registrar</a>
+			</li>
+			<li>
+				<a href="/app/logout"><i class="material-icons right">exit_to_app</i>Salir    </a>
+			</li>
+		  </ul>
+		  <ul class="side-nav" id="mobile-demo">
+			    <li>
+					<a href="/app/admin">Registrar</a>
+				</li>
+				<li>
+					<a href="/app/logout">Salir</a>
+				</li>
+      		</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<h2 class="center font-mrRobot">RASPI-APP</h2>
+		<h5 class="center"><%=username%></h5>
+		<div class="toggle center-block m-medium-top-space">
+      		<div class="toggle-handle"></div>
+    	</div>
+		<form class="m-medium-top-space">
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<input type="number" id="numberTimeOut">    
+					<label for="numberTimeOut">Tiempo</label>
+				</div>
+				<div class="input-field col s12 m6">
+					<select id="timeOptions">
+					  <option value="" disabled selected>Escoge tu opción</option>
+					  <option value="1">Milisegundos</option>
+					  <option value="2">Segundos</option>
+					  <option value="3">Minutos</option>
+					  <option value="4">Hora(s)</option>
+					</select>
+					<label>Materialize Select</label>
+				</div>
+			</div>
+			<button type="submit" class="btn waves-effect waves-light indigo" id="shutdown">Apagar</button>
+		</form>
+	</div>
+<!--
+	<header class="bar bar-nav">
+	  <h1 class="title">Raspi App Server</h1>
+	</header>
+	<div class="content">
+		<ul class="table-view">
+			<li class="table-view-cell">
+				Led
+				<div class="toggle">
+					<div class="toggle-handle"></div>
+				</div>
+			</li>
+		</ul>
+
+		<form>
+			<label for="">Tiempo en milisegundos</label>
+			<input type="number" placeholder="Tiempo" id="numberTimeOut">
+			<button class="btn btn-positive btn-block" id="shutdown">Apagar</button>
+		</form>
+
+	-->
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.js"></script>
+	<script>
+		  $(document).ready(function() {
+		    $('select').material_select();
+		    $(".button-collapse").sideNav();
+		  });
+	</script>
+	<script src="/javascripts/main.js"></script>
+</body>
+</html>

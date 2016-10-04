@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>RaspiApp - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="stylesheets/styles.css">
+        <style>
+        	body{ background-color: #E8ECED; }
+        </style>
+    </head>
+    <body>
+        <div class="container m-medium-top-space">
+                <div class="row">
+        		    <div class="col m6 offset-m3 z-depth-1 white" style="border-radius: 5px;">
+        		    	<div class="row">
+        		    		<header class="col s12 indigo center">
+        		    			<h4 class="white-text main" style="font-family: 'Arial Black'">Login</h4>
+        		    		</header>
+        		    		<form class="col s12 m-medium-top-space" style="padding: 20px 30px 10px 30px;" method="post" action="/sessions">
+        		    			<div class="row">
+							    	<div class="input-field col s12">
+							    		<i class="material-icons prefix">account_circle</i>
+          								<input id="username" type="text" class="validate" name="username">
+          								<label for="username">Usuario</label>
+        							</div>
+        							<div class="input-field col s12">
+							    		<i class="material-icons prefix">lock</i>
+          								<input id="password" type="password" class="validate" name="password">
+          								<label for="password">Contraseña</label>
+        							</div>
+
+        							<div class="col s12 m-top-space">
+        								<button type="submit" class="waves-effect waves-light btn indigo" style="diplay:block; float: right;">Entrar</button>
+        							</div>
+							    </div>
+        		    		</form>
+        		    	</div>
+    				</div>
+        	</div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    </body>
+</html>

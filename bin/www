@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('raspi-app-server:server');
 var http = require('http');
+require('../database/db');
 
 
 /**

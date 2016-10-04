@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Error</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	
+	<h1><%=error.status%> - <%=message%></h1>
+	<img src="/images/notfound.jpg" class="responsive-img center-block">
+	<h3><%=error%></h3>
+	<p class="blue-text"><%=error.stack%></p>
 </body>
 </html>
