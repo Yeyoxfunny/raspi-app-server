@@ -1,3 +1,3 @@
 module.exports = {
-	"dbURI": process.env.dbURI || 'mongodb://localhost/raspiapp'
+	"dbURI": process.env.DATABASE_URL;
 }

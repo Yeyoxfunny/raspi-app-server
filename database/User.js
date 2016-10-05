@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
 	username: String,
-	password: { type: String, minlength:[8, 'La contraseña es muy corta']}
+	password: String
 });
 
 
