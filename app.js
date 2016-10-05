@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
+var flash = require('express-flash')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -29,6 +29,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+app.use(flash());
+
 
 app.use('/', routes);
 app.use('/app',session_middleware);

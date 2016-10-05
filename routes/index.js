@@ -13,24 +13,26 @@ router.get('/', function (req, res) {
 });
 
 router.post('/sessions',function (req, res, next) {
-	console.log(req.body.username)
+	console.log(req.body.username);
+	console.log(req.body.password);
 	User.findOne({username: req.body.username}, function (err, doc) {
 		if (err) {
 			return next(err);
 		}
 		if (!doc) {
-			return next("No existe usuario");
+			req.flash('info',req.flash('info', 'Failed!'));
+			return res.redirect('/');
 		}
 		doc.comparePassword(req.body.password, doc.password, function (err, isMatch) {
               if(err){
                 return next(err);
               }
               if(!isMatch){
-                return next('Contraseña incorrecta');
+              	req.flash('info',req.flash('info', 'Failed!'));
+                return res.redirect('/');
               }
-              console.log(doc._id);
-              req.session.user_id = doc._id ;
-              return res.redirect('app');
+              req.session.user_id = doc._id;
+              return res.redirect('/app');
         });
 	});
 });

@@ -4,12 +4,12 @@ var router = express.Router();
 var User = require('../database/User');
 
 router.get('/', function(req, res, next) {
-	console.log(req.session.user_id);
+	
 	res.render('app/index');
 });
 
 router.post('/signup', function (req,res,next) {
-	console.log('Hola mundo')
+	console.log('Hola mundo');
 	var user = new User({
 		username: req.body.username,
 		password: req.body.password
@@ -18,6 +18,7 @@ router.post('/signup', function (req,res,next) {
 		if(err){
 			return next(err);
 		}
+		req.flash('info', 'Success!');
 		res.redirect('/app');
 	});
 });

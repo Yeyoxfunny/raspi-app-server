@@ -34,27 +34,27 @@
 	</nav>
 
 	<div class="container row">
-		<form action="/app/signup" class="center-block form-register" method="post">
+		<form action="/app/signup" class="center-block form-register" method="post" id="formRegister">
 			<img src="/images/SIGESTECCI.png" class="center-block">
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">account_circle</i>
-	          		<input id="last_name" type="text" class="validate" name="username">
-	          		<label for="last_name">Nombre de usuario</label>
+	          		<input id="username" type="text" class="validate" name="username" required>
+	          		<label for="username">Nombre de usuario</label>
 	        	</div>
 
 				<div class="input-field col s12">
 					<i class="material-icons prefix">lock</i>
-	          		<input id="last_name" type="password" class="validate" name="password">
-	          		<label for="last_name">Contraseña</label>
+	          		<input id="password" type="password" class="validate" name="password" required>
+	          		<label for="password">Contraseña</label>
 	        	</div>
 
 	       		<div class="input-field col s12">
 	       			<i class="material-icons prefix">lock</i>
-	          		<input id="last_name" type="password" class="validate" name="password_confirmation">
-	          		<label for="last_name">Confirmar contraseña</label>
+	          		<input id="password_confirmation" type="password" class="validate" name="password_confirmation">
+	          		<label for="password_confirmation">Confirmar contraseña</label>
 	        	</div>	
-	        	<button type="submit" class="waves-effect waves-light btn center-block indigo" style="width: 90%;">Registrar</button>
+	        	<button type="submit" class="waves-effect waves-light btn center-block indigo" style="width: 90%;" id="btnRegistrar" required>Registrar</button>
 			</div>
 		</form>
 	</div>

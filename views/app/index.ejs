@@ -19,7 +19,7 @@
 				<a href="/app/admin"><i class="material-icons right">account_circle</i>Registrar</a>
 			</li>
 			<li>
-				<a href="/app/logout"><i class="material-icons right">exit_to_app</i>Salir    </a>
+				<a href="/app/logout"><i class="material-icons right">exit_to_app</i>Salir</a>
 			</li>
 		  </ul>
 		  <ul class="side-nav" id="mobile-demo">
@@ -34,20 +34,23 @@
 	</nav>
 
 	<div class="container">
-		<h2 class="center font-mrRobot">RASPI-APP</h2>
+		<h2 class="center font-mrRobot color-mrRobot">RASPI-APP</h2>
 		<h5 class="center"><%=username%></h5>
+		
+		<i class="material-icons large center-block" style="margin: 0 auto; width: 84px" id="wb_incandescent">wb_incandescent</i>
+
 		<div class="toggle center-block m-medium-top-space">
       		<div class="toggle-handle"></div>
     	</div>
 		<form class="m-medium-top-space">
 			<div class="row">
 				<div class="input-field col s12 m6">
-					<input type="number" id="numberTimeOut">    
+					<input type="number" id="numberTimeOut" required>    
 					<label for="numberTimeOut">Tiempo</label>
 				</div>
 				<div class="input-field col s12 m6">
-					<select id="timeOptions">
-					  <option value="" disabled selected>Escoge tu opción</option>
+					<select id="timeOptions" required>
+					  <option value="0" disabled selected>Escoge tu opción</option>
 					  <option value="1">Milisegundos</option>
 					  <option value="2">Segundos</option>
 					  <option value="3">Minutos</option>
@@ -57,30 +60,22 @@
 				</div>
 			</div>
 			<button type="submit" class="btn waves-effect waves-light indigo" id="shutdown">Apagar</button>
+			<button type="submit" class="btn waves-effect waves-light #d32f2f red darken-2" id="cancelShudown" disabled>Cancelar</button>
 		</form>
 	</div>
-<!--
-	<header class="bar bar-nav">
-	  <h1 class="title">Raspi App Server</h1>
-	</header>
-	<div class="content">
-		<ul class="table-view">
-			<li class="table-view-cell">
-				Led
-				<div class="toggle">
-					<div class="toggle-handle"></div>
-				</div>
-			</li>
-		</ul>
-
-		<form>
-			<label for="">Tiempo en milisegundos</label>
-			<input type="number" placeholder="Tiempo" id="numberTimeOut">
-			<button class="btn btn-positive btn-block" id="shutdown">Apagar</button>
-		</form>
-
-	-->
+	
+	<div id="alert" class="#ef5350 red lighten-1" style="display: none;">
+		<span>El usuario ha sido registrado satisfactoriamente</span>
+		<div class="close">X</div>
 	</div>
+	
+	<% if ( messages.info ) { %>
+    	<script>
+		    var alertRegister = document.getElementById('alert');
+		    alertRegister.style.display = 'block';
+    	</script>
+	<% } %>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.js"></script>
@@ -88,6 +83,12 @@
 		  $(document).ready(function() {
 		    $('select').material_select();
 		    $(".button-collapse").sideNav();
+
+		    var alertClose = document.querySelector('#alert .close');
+		    alertClose.addEventListener('click',function () {
+		    	$( "#alert" ).hide( "slow" );
+		    });
+
 		  });
 	</script>
 	<script src="/javascripts/main.js"></script>

@@ -42,13 +42,44 @@
 }
 .font-mrRobot{
   font-family: mrrobot;
+}
+.color-mrRobot{
   color: #D32027;
 }
+#alert{
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  top: 53px;
+  color: #FFF;
+}
+#alert span{
+  width: 97%;
+  display: inline-block;
+}
+#alert .close{
+  display: inline-block;
+  cursor: pointer;
+}
 
+.animation-ligth{
+  color: #ffeb3b;
+  -webkit-animation: brightness 2.5s;
+  animation: brightness 2.5s;
+}
 
+@-webkit-keyframes mymove {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes brightness{
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
 /* ============================================================
   TOGGLE-BUTTON
 ============================================================ */
+
 .toggle {
   position: relative;
   display: block;

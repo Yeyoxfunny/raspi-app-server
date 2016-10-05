@@ -9,8 +9,6 @@ module.exports = function (req, res, next) {
   				console.log(err);
   				res.redirect('/');		
   			}else{
-  				console.log('Holaaaaa',user);
-  				console.log(res.locals.user);
   				res.locals = { username: user.username}
   				next();
   			}
