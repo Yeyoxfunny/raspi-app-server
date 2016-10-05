@@ -35,10 +35,12 @@ module.exports = function(server){
 			statusApplication.isPong = data.isPong;
 			io.sockets.emit('toggleAllClients', data);
 			io.sockets.emit('shutdownAllClients',data);
+			statusApplication.isPong = false;
 		});
 
 		socket.on('cancelShutdownClient',function() {
 			statusApplication.timeSleep = false;
+			console.log('Cancel Shudown',statusApplication );
 			io.sockets.emit('shutdownAllClients',{isPong: true});
 			io.sockets.emit('cancelShutdownServer');
 		});
